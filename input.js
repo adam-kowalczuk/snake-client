@@ -12,7 +12,7 @@ const setupInput = function(conn) {
 
 const handleUserInput = function(key) {
   if (key === '\u0003') {
-    console.log('Exiting game');
+    console.log('Thanks for playing');
     process.exit();
   }
   if (key === 'w') {
@@ -28,11 +28,9 @@ const handleUserInput = function(key) {
     connection.write("Move: right");
   }
   if (key === 'm') {
-    connection.write("Say: I'm the best")
+    connection.write("Say: SsSsssS")
   }
 };
-
-// setupInput();
 
 module.exports = {
   setupInput
