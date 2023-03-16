@@ -16,7 +16,6 @@ const handleUserInput = function(key) {
     process.exit();
   }
   if (key === 'w') {
-    console.log('Move: up');
     connection.write('Move: up');
   }
   if (key === 'a') {
@@ -27,6 +26,9 @@ const handleUserInput = function(key) {
   }
   if (key === 'd') {
     connection.write("Move: right");
+  }
+  if (key === 'm') {
+    connection.write("Say: I'm the best")
   }
 };
 
