@@ -7,14 +7,23 @@ const connect = function() {
     host: "165.227.47.243"
   });
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: AK");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 500);
+    // setInterval(() => {
+    //   conn.write("Move: left");
+    // }, 1000);
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 1500);
+  });
+
   conn.on('data', () => {
     console.log(`you ded cuz you idled`);
   });
-
-  conn.on('connect', () => {
-    console.log("Successfully connected to game server");
-    conn.write("Name: AK")
-  })
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
@@ -22,7 +31,6 @@ const connect = function() {
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
-
-module.exports = connect;
+module.exports = {
+  connect
+};
